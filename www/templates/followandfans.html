@@ -1,0 +1,15 @@
+<ion-view>
+<ion-content>
+
+   <div>
+        
+        <p>你关注了 {{stat.totalFollowing}} 人:</p>
+        <a ng-repeat="user in followings" style="padding:5px;display:inline-block;">
+          <img style="height:60px;" ng-src="{{user.thumbnail}}">
+          <p>{{user.nickname}}</p>
+        </a>
+      </div>
+
+
+</ion-content>
+</ion-view>

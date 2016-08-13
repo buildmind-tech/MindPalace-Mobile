@@ -1,0 +1,27 @@
+<div style="background-color:#fff;margin-top:10px;padding:10px 0 5px 5px;position:relative;">
+    <i class="icon ion-close" style="position:absolute;top:10px;right:10px;" ng-click="deletePost(posting.id)" ng-if="posting.user_id==my_id"></i>
+
+    <a ng-if="type=='dashboard'" ng-href="{{'#/personal-page/'+posting.user_id}}" style="text-decoration:none; color:#000">
+        <img style="height:45px;float:left;padding:0 5px 0 5px;border-radius:100%;" ng-src="{{posting.thumbnail}}">
+        <p style="font-size:18px">{{posting.nickname}}</p>
+        <p style="font-size:12px">{{posting.created_at | from_now}} 来自微博</p>
+    </a>
+
+    <a ng-if="type=='personal'" style="text-decoration:none; color:#000">
+        <img style="height:40px;float:left;padding:0 5px 0 5px;border-radius:100%;" ng-src="{{posting.thumbnail}}">
+        <p style="font-size:18px">{{posting.nickname}}</p>
+        <p style="font-size:12px">{{posting.created_at | from_now}} 来自微博</p>
+    </a>
+
+    <p>{{posting.text}}</p>
+    <a ng-href="{{'#/post-detail/'+posting.id}}"><img ng-src="{{posting.image_url}}" style="width:95%"></a>
+
+    <div class="row" style="text-align:center;font-size:24px;">
+    	<div class="col col-33"><i class="icon ion-compose"></i> 
+                                <span></span>
+    	</div>
+    	<div class="col col-33"> <i class="icon ion-ios-chatboxes-outline"></i>
+    	<span style="font-size:20px;padding-left:5px;">{{stat.totalComments}}</span></div>
+    	<div class="col col-33"><i class="icon ion-thumbsup"></i><span style="font-size:20px;padding-left:5px">{{stat.totalLikes}}</span></div>
+    </div>
+</div>

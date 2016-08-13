@@ -1,0 +1,40 @@
+<ion-view>
+      <ion-header-bar class="bar-stable">
+        
+      </ion-header-bar>
+      <ion-content class="has-header">
+      <ion-refresher
+         pulling-text="刷新"
+         on-refresh="refresh()">
+       </ion-refresher>
+
+
+      <div style="text-align:center; height:150px;background-color:gray;padding-top:20px;">
+        <p>{{stat.nickname}}</p>
+        <img style="height:50px;border-radius:100%;" ng-src="{{stat.thumbnail}}">
+        <div style="
+        width:100%;padding:0 5% 0 5%"> 
+            
+            <a ng-href="{{'#/follow-and-fans/'+stat.id}}" 
+               style="color:#fff;
+                      width:45%;
+                      padding-right: 0;
+                      text-align: right;
+                      margin-right: 5px;
+                      position: inline-block;
+                      border-right: 1px solid #000;
+                      text-decoration:none;
+                      ">关注 {{stat.totalFollowing}}
+            </a>
+           
+            <a style="color:#fff;width:45%; position:inline-block;text-decoration:none;">粉丝 {{stat.totalFollower}}
+            </a>
+            
+             
+        </div>
+      </div>
+      
+<div style="background-color:#d8d8d8"">
+      <post type="personal" post-data="post" ng-repeat="post in posts"></post>
+</div>
+</ion-content></ion-view>

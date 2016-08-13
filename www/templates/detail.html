@@ -1,0 +1,21 @@
+<ion-view title="{{user.nickname}}">
+	
+	<ion-content>
+	<img style="width:100px;" src="{{user.thumbnail}}">
+	<p>{{user.nickname}}</p>
+	<p>GUanzhu{{stat.totalFollowing}} Fans {{stat.totalFollower}}</p>
+	<p>共同关注</p>
+         <div ng-repeat="asd in commons" style="display:inline-block;padding:5px;">
+          <img style="height:60px;" ng-src="{{asd.thumbnail}}" >
+          <p>{{asd.nickname}}</p>
+        </div>
+
+        <br>
+        <p>共同Fans</p>
+         <div ng-repeat="asd in commonfans" style="display:inline-block;padding:5px;">
+            <img style="height:60px;" ng-src="{{asd.thumbnail}}">
+            <p>{{asd.nickname}}</p>
+
+        </div>
+    </ion-content>
+</ion-view>
